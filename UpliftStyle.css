@@ -1,0 +1,126 @@
+.map {
+	height: 500px;
+	width: 100%;
+	z-index: 1;
+	position: relative;
+}
+
+.SubHeaderBar {
+	background-color: #DA291C;
+	width: 100%;
+	padding: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	color: white;
+	margin-top: 10px;
+	border-radius: 20px 0px;
+	font-weight: 100;
+	font-size: 27px;
+    line-height: 32px;
+}
+
+.RedTab {
+	position: absolute;
+    top: 103px;
+    left: 130px;
+}
+
+.Money {
+	padding-left: 100px;
+	padding-top: 25px;
+}
+
+.InfoBlock {
+	position: relative;
+	z-index: 50;
+	font-family: 'Open Sans';
+	margin-bottom: 100px;
+}
+
+.InfoBlock h2 {
+	font-weight: 900 !important;
+	font-size: 40px !important;
+}
+
+.SubBlock {
+	width: 100%;
+	padding-bottom: 50px;
+	min-height: 400px;
+}
+
+.InfoHeading {
+	width: 100%;
+	font-weight: 900;
+}
+
+.InfoImg {
+	max-width: 200px;
+	width: 30%;
+	float: left;
+}
+
+.InfoImg img {
+	width: 100%;
+}
+
+.InfoContent {
+	width: 70%;
+	float: right;
+}
+
+.SpanOrg {
+	color: black;
+	font-weight: 900;
+}
+
+.SpanAction {
+	color: green;
+}
+
+.SubPoverty > .InfoHeading h2 {
+	color: #106eb7;
+}
+
+.SubPoverty > .InfoContent .SpanAction {
+	color: #106eb7;
+}
+
+.SubKids > .InfoHeading h2 {
+	color: #31b455;
+}
+
+.SubKids > .InfoContent .SpanAction {
+	color: #31b455;
+}
+
+.SubCommunity > .InfoHeading h2 {
+	color: #f15730;
+}
+
+.SubCommunity > .InfoContent .SpanAction {
+	color: #f15730;
+}
+
+#Kamloops {
+}
+
+#Cariboo {
+	display: none;
+}
+
+#Ashcroft {
+	display: none;
+}
+
+#Merritt {
+	display: none;
+}
+
+#NorthThompson {
+	display: none;
+}
+
+
+.rbr {
+	display: none;
+}

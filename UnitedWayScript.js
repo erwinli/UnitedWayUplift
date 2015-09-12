@@ -255,26 +255,57 @@ new google.maps.LatLng(50.940582,-121.613202)
   cariboo.setMap(map);
   kamloops.setMap(map);
 
+    document.getElementById('Merritt').style.display = 'block';
+    document.getElementById('NorthThompson').style.display = 'none';
+    document.getElementById('Ashcroft').style.display = 'none';
+    document.getElementById('Cariboo').style.display = 'none';
+    document.getElementById('Kamloops').style.display = 'none';
 
   //onClick
   google.maps.event.addListener(merritt, "click", function() {
     //TODO: display correct info when clicked
+    document.getElementById('Merritt').style.display = 'block';
+    document.getElementById('NorthThompson').style.display = 'none';
+    document.getElementById('Ashcroft').style.display = 'none';
+    document.getElementById('Cariboo').style.display = 'none';
+    document.getElementById('Kamloops').style.display = 'none';
   });
 
   google.maps.event.addListener(loganAshCache, "click", function() {
     //TODO: display correct info when clicked
+    document.getElementById('Merritt').style.display = 'none';
+    document.getElementById('NorthThompson').style.display = 'none';
+    document.getElementById('Ashcroft').style.display = 'block';
+    document.getElementById('Cariboo').style.display = 'none';
+    document.getElementById('Kamloops').style.display = 'none';
   });
 
   google.maps.event.addListener(northThompson, "click", function() {
     //TODO: display correct info when clicked
+    document.getElementById('Merritt').style.display = 'none';
+    document.getElementById('NorthThompson').style.display = 'block';
+    document.getElementById('Ashcroft').style.display = 'none';
+    document.getElementById('Cariboo').style.display = 'none';
+    document.getElementById('Kamloops').style.display = 'none';
   });
 
   google.maps.event.addListener(cariboo, "click", function() {
     //TODO: display correct info when clicked
+    document.getElementById('Merritt').style.display = 'none';
+    document.getElementById('NorthThompson').style.display = 'none';
+    document.getElementById('Ashcroft').style.display = 'none';
+    document.getElementById('Cariboo').style.display = 'block';
+    document.getElementById('Kamloops').style.display = 'none';
+
   });
 
   google.maps.event.addListener(kamloops, "click", function() {
     //TODO: display correct info when clicked
+    document.getElementById('Merritt').style.display = 'none';
+    document.getElementById('NorthThompson').style.display = 'none';
+    document.getElementById('Ashcroft').style.display = 'none';
+    document.getElementById('Cariboo').style.display = 'none';
+    document.getElementById('Kamloops').style.display = 'block';
   });
 
   //hover effect
