@@ -14,6 +14,7 @@ function initMap() {
     mapTypeId: google.maps.MapTypeId.TERRAIN
   });
 
+  var borderColor = '#FF0000';
 //Set coordinates for each region
   var allRegionCoord = [
 new google.maps.LatLng(50.941123,-121.613159),
@@ -180,7 +181,7 @@ new google.maps.LatLng(50.940582,-121.613202)
   // Construct each regions polygon.
   var allRegion = new google.maps.Polygon({
     paths: allRegionCoord,
-    strokeColor: '#FF0000',
+    strokeColor: borderColor,
     strokeOpacity: 0.8,
     strokeWeight: 2,
     fillColor: '#FF0000',
@@ -189,7 +190,7 @@ new google.maps.LatLng(50.940582,-121.613202)
 
   var merritt = new google.maps.Polygon({
     paths: merrittCoord,
-    strokeColor: '#FF0000',
+    strokeColor: borderColor,
     strokeOpacity: 0.8,
     strokeWeight: 2,
     fillColor: '#FF0000',
@@ -198,7 +199,7 @@ new google.maps.LatLng(50.940582,-121.613202)
 
   var loganAshCache = new google.maps.Polygon({
     paths: loganAshCacheCoord,
-    strokeColor: '#FF0000',
+    strokeColor: borderColor,
     strokeOpacity: 0.8,
     strokeWeight: 2,
     fillColor: '#FF0000',
@@ -207,7 +208,7 @@ new google.maps.LatLng(50.940582,-121.613202)
 
   var northThompson = new google.maps.Polygon({
     paths: northThompsonCoord,
-    strokeColor: '#FF0000',
+    strokeColor: borderColor,
     strokeOpacity: 0.8,
     strokeWeight: 2,
     fillColor: '#FF0000',
@@ -216,7 +217,7 @@ new google.maps.LatLng(50.940582,-121.613202)
 
   var cariboo = new google.maps.Polygon({
     paths: caribooCoord,
-    strokeColor: '#FF0000',
+    strokeColor: borderColor,
     strokeOpacity: 0.8,
     strokeWeight: 2,
     fillColor: '#FF0000',
@@ -225,7 +226,7 @@ new google.maps.LatLng(50.940582,-121.613202)
 
   var kamloops = new google.maps.Polygon({
     paths: kamloopsCoord,
-    strokeColor: '#FF0000',
+    strokeColor: borderColor,
     strokeOpacity: 0.8,
     strokeWeight: 2,
     fillColor: '#FF0000',
