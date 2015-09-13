@@ -8,8 +8,13 @@ var loganAshCache;
 
 function initMap() {
   
+  var zoomSize = 6;
+  if (window.matchMedia("screen and (min-width: 320px)").matches) {
+    zoomSize = 5;
+  }
+
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 6,
+    zoom: zoomSize,
     center: {lat: 52.003118, lng: -122.070649},
     mapTypeId: google.maps.MapTypeId.TERRAIN
   });
