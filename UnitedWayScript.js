@@ -1,9 +1,15 @@
-var map;
+  
+var selectedFlag;
+var merritt;
+var kamloops;
+var northThompson;
+var cariboo;
+var loganAshCache;
 
 function initMap() {
   
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 7,
+    zoom: 6,
     center: {lat: 52.003118, lng: -122.070649},
     mapTypeId: google.maps.MapTypeId.TERRAIN
   });
@@ -255,26 +261,65 @@ new google.maps.LatLng(50.940582,-121.613202)
   cariboo.setMap(map);
   kamloops.setMap(map);
 
-
   //onClick
   google.maps.event.addListener(merritt, "click", function() {
     //TODO: display correct info when clicked
+    document.getElementById('Merritt').style.display = 'block';
+    document.getElementById('NorthThompson').style.display = 'none';
+    document.getElementById('Ashcroft').style.display = 'none';
+    document.getElementById('Cariboo').style.display = 'none';
+    document.getElementById('Kamloops').style.display = 'none';
+    
+    selectedFlag = "merritt";
+    checkSelected(selectedFlag);
   });
 
   google.maps.event.addListener(loganAshCache, "click", function() {
     //TODO: display correct info when clicked
+    document.getElementById('Merritt').style.display = 'none';
+    document.getElementById('NorthThompson').style.display = 'none';
+    document.getElementById('Ashcroft').style.display = 'block';
+    document.getElementById('Cariboo').style.display = 'none';
+    document.getElementById('Kamloops').style.display = 'none';
+
+    selectedFlag = "loganAshCache";
+    checkSelected(selectedFlag);
   });
 
   google.maps.event.addListener(northThompson, "click", function() {
     //TODO: display correct info when clicked
+    document.getElementById('Merritt').style.display = 'none';
+    document.getElementById('NorthThompson').style.display = 'block';
+    document.getElementById('Ashcroft').style.display = 'none';
+    document.getElementById('Cariboo').style.display = 'none';
+    document.getElementById('Kamloops').style.display = 'none';
+
+    selectedFlag = "northThompson";
+    checkSelected(selectedFlag);
   });
 
   google.maps.event.addListener(cariboo, "click", function() {
     //TODO: display correct info when clicked
+    document.getElementById('Merritt').style.display = 'none';
+    document.getElementById('NorthThompson').style.display = 'none';
+    document.getElementById('Ashcroft').style.display = 'none';
+    document.getElementById('Cariboo').style.display = 'block';
+    document.getElementById('Kamloops').style.display = 'none';
+
+    selectedFlag = "cariboo";
+    checkSelected(selectedFlag);
   });
 
   google.maps.event.addListener(kamloops, "click", function() {
     //TODO: display correct info when clicked
+    document.getElementById('Merritt').style.display = 'none';
+    document.getElementById('NorthThompson').style.display = 'none';
+    document.getElementById('Ashcroft').style.display = 'none';
+    document.getElementById('Cariboo').style.display = 'none';
+    document.getElementById('Kamloops').style.display = 'block';
+
+    selectedFlag = "kamloops";
+    checkSelected(selectedFlag);
   });
 
   //hover effect
@@ -283,7 +328,7 @@ new google.maps.LatLng(50.940582,-121.613202)
     merrittInfoWindow.open(map);
   }); 
   google.maps.event.addListener(merritt,"mouseout",function(){
-    this.setOptions({fillOpacity: 0.35});
+    checkSelected(selectedFlag);
     merrittInfoWindow.close();
   });
 
@@ -292,7 +337,7 @@ new google.maps.LatLng(50.940582,-121.613202)
     loganAshCacheInfoWindow.open(map);
   }); 
   google.maps.event.addListener(loganAshCache,"mouseout",function(){
-    this.setOptions({fillOpacity: 0.35});
+    checkSelected(selectedFlag);
     loganAshCacheInfoWindow.close();
   });
 
@@ -301,7 +346,7 @@ new google.maps.LatLng(50.940582,-121.613202)
     northThompsonInfoWindow.open(map);
   }); 
   google.maps.event.addListener(northThompson,"mouseout",function(){
-    this.setOptions({fillOpacity: 0.35});
+    checkSelected(selectedFlag);
     northThompsonInfoWindow.close();
   });
 
@@ -310,7 +355,7 @@ new google.maps.LatLng(50.940582,-121.613202)
     caribooInfoWindow.open(map);
   }); 
   google.maps.event.addListener(cariboo,"mouseout",function(){
-    this.setOptions({fillOpacity: 0.35});
+    checkSelected(selectedFlag);
     caribooInfoWindow.close();
   });
 
@@ -319,8 +364,47 @@ new google.maps.LatLng(50.940582,-121.613202)
     kamloopsInfoWindow.open(map);
   }); 
   google.maps.event.addListener(kamloops,"mouseout",function(){
-    this.setOptions({fillOpacity: 0.35});
+    checkSelected(selectedFlag);
     kamloopsInfoWindow.close();
   });
 
+function checkSelected(flag) {
+  if (flag === "merritt") {
+    merritt.setOptions({fillOpacity: 0.6});
+    kamloops.setOptions({fillOpacity: 0.35});
+    cariboo.setOptions({fillOpacity: 0.35});
+    northThompson.setOptions({fillOpacity: 0.35});
+    loganAshCache.setOptions({fillOpacity: 0.35});
+  } else if (flag === "kamloops") {
+    merritt.setOptions({fillOpacity: 0.35});
+    kamloops.setOptions({fillOpacity: 0.6});
+    cariboo.setOptions({fillOpacity: 0.35});
+    northThompson.setOptions({fillOpacity: 0.35});
+    loganAshCache.setOptions({fillOpacity: 0.35});
+  } else if (flag === "cariboo") {
+    merritt.setOptions({fillOpacity: 0.35});
+    kamloops.setOptions({fillOpacity: 0.35});
+    cariboo.setOptions({fillOpacity: 0.6});
+    northThompson.setOptions({fillOpacity: 0.35});
+    loganAshCache.setOptions({fillOpacity: 0.35});
+  } else if (flag === "northThompson") {
+    merritt.setOptions({fillOpacity: 0.35});
+    kamloops.setOptions({fillOpacity: 0.35});
+    cariboo.setOptions({fillOpacity: 0.35});
+    northThompson.setOptions({fillOpacity: 0.6});
+    loganAshCache.setOptions({fillOpacity: 0.35});
+  } else if (flag === "loganAshCache") {
+    merritt.setOptions({fillOpacity: 0.35});
+    kamloops.setOptions({fillOpacity: 0.35});
+    cariboo.setOptions({fillOpacity: 0.35});
+    northThompson.setOptions({fillOpacity: 0.35});
+    loganAshCache.setOptions({fillOpacity: 0.6});
+  } else {
+    merritt.setOptions({fillOpacity: 0.35});
+    kamloops.setOptions({fillOpacity: 0.35});
+    cariboo.setOptions({fillOpacity: 0.35});
+    northThompson.setOptions({fillOpacity: 0.35});
+    loganAshCache.setOptions({fillOpacity: 0.35});
+  }
+}
 }

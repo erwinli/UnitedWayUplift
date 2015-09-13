@@ -102,6 +102,7 @@
 }
 
 #Kamloops {
+	display: none;
 }
 
 #Cariboo {
@@ -123,4 +124,43 @@
 
 .rbr {
 	display: none;
+}
+
+@media screen and (max-width: 320px) {
+	.rbr {
+		display: inherit;
+	}
+	.map {
+		height: 300px;
+	}
+	.SubHeaderBar {
+		width: 100%;
+		text-align: center;
+	}
+	.InfoImg {
+		width: 100%;
+	}
+	.InfoImg img {
+		width: 60%;
+		margin-left: 30%;
+	}
+	.RedTab {
+		display: none;
+	}
+	.InfoContent {
+		margin-bottom: 30px;
+		width: 100%;
+	}
+	.InfoHeading h2 {
+		text-align: center !important;
+		margin-bottom: 0px;
+	}
+	.Money {
+		text-align: center;
+		padding-left: 0;
+	}
+	.SpanAction {
+		padding-left: 10px;
+		margin-bottom: 20px;
+	}
 }
